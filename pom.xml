@@ -7,6 +7,9 @@
     <version>0.0.2-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
+    <name>Bukkit Plugin Archetype</name>
+    <description>A Bukkit plugin archetype for Teal Cube plugins and libraries.</description>
+
     <scm>
         <connection>scm:git:https://github.com/TealCube/bukkit-plugin-archetype.git</connection>
         <developerConnection>scm:git:https://github.com/TealCube/bukkit-plugin-archetype.git</developerConnection>
