@@ -45,6 +45,7 @@
                     <useReleaseProfile>false</useReleaseProfile>
                     <releaseProfiles>release</releaseProfiles>
                     <goals>deploy</goals>
+                    <scmCommentPrefix>[maven-release-plugin][ci skip]</scmCommentPrefix>
                 </configuration>
             </plugin>
         </plugins>
