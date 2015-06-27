@@ -1,12 +1,7 @@
 language: java
 jdk:
 - oraclejdk7
-after_success:
-- echo "<settings><servers><server><id>ossrh</id><username>\${env.OSSRH_USERNAME}</username><password>\${env.OSSRH_PASSWORD}</password></server></servers></settings>"
-  > ~/settings.xml
-- mvn deploy --settings ~/settings.xml
-env:
-  OSSRH_PASSWORD:
-    secure: KpXlUmpLpwM9TI81Vl0mL2xHKnnl1Gl8cfumJLbyGWoToZUR0AZe6HqYp4dR5KdnjSl8VQaaAfrkMjnuOT2r+BQmFB0s+m0xiMIgN9kFjxnZ+bRA3q5Z9OcNneNG3W7E1oOr00trSfZ6a7acSu4UKZ1Itk1Sa0cb6/Jed+br5afpLQI621KLEhsmS5ix/91+XJGP1rOWWFASZsFn9CiBrT1akijcUumU9GD+qxX/OoIl8tjoJ9ERYPL3Gj91cDENYtBUm1K5cLEwOcIQh+aNUIVuw3SZuMPYKpRdj2cr2GSexAxoOq2P7B6VC45md+vonxGaexKc1SZYbMeJeX7PFg6u2uOBqKnTH98i0Cw22H/9u4v6+uI9QeC6IaU0EhkJVLyQGD0wjvkwVm2SCFetr3gT8FsLNyo3GIhMWOK9uCHxMio1XTQzpBooDvbHmaVLHy8USAP7uwml7RmoTFW2sNDnDdKJ+8bfudo9h0quCCuXVBTNVtEhG6RQBvZNpKbFO6BXzqxHpsjE1zHiWPMUoUWSgKfxBD3dvv1HujECrSsEeYH5qLvHBAZQ21a7fytPJDFXztl3tqzS1VqkzEwNgQpiinGiotwuYADhAav0u3ccGVfUddNGQeqk78VDqWCw0GdCmY8UrSUzzclb4CqcUWE+r9pJLyTB7zENdlLdnnA=
-  OSSRH_USERNAME:
-    secure: GwvOl9jfCXPLFcJckadThEGThOTBBDExefJ048txUdqAMe3ggCdIpNVHr69T78RZ9Bs/VcKnrOYmTBuM5xxAvd5mjFM+Zts7setukD5MxcOIMvBEOIociAdG9UEWDRwBYxpR1j2JiRLmgVUWXQI6dUKpEfbpTlpx/eFnupQQVA3X+Ks+Ph9Pr46nNv0HqxH+WI2a5G6tVK5PUdJbP5VL1MMUU4mGyZzvu08pWkvWbO7L7wA6gy2xJdcHfhBTOQBxk9ylivSWHZZeW0Fp25g6ef7rQ0z8U3jt6u/W9xWwpo23X1Hjhake6yT982dYe9TMldMX4FV9622B0oXJLfUS6djnY1S+owE6tALycEZBfjuDDVbclkMPVbuooDHcgfhqdTAdIvzaxbx3H9Gz/KggImQv/vwkM/qcDMZzLri0rAdDKod/4jBOH/MvJRkrZqLXpqKkf8wi+zyABb3j1VvHT9D9uUJpIy3/sWnOlFKoMnTuvBMFMk6XdIUe6QZXiwC4Osa1Z0/Ne0XJjhoRPFSV7IQWskMQvwWCrf/I9hGoIer2br1JXBxy7yX345WHTEsypueOaEYQRBNfA3RBURXm0iuIRO9Zl6D4KH2nNKqKId5yuHFkm/Pl8ab3+S992D6bhMbU9/voO2eW9bHRHCB25P5Ui3TylG/GN5TF+sJM+uQ=
+before_install:
+- openssl aes-256-cbc -K $encrypted_80daed5d8b17_key -iv $encrypted_80daed5d8b17_iv
+  -in settings.xml.enc -out settings.xml -d
+script: mvn clean deploy --settings ~/settings.xml
