@@ -1,11 +1,9 @@
 language: java
 jdk:
 - oraclejdk7
-after_success:
-
 before_install:
-- wget https://gist.githubusercontent.com/Nunnery/2716c87ed5657884fcc2/raw/b8bea1cb54ea41a9e3e725b3310138f0494d55b9/settings.xml
-script: mvn clean deploy --settings ~/settings.xml
+- wget https://gist.githubusercontent.com/Nunnery/2716c87ed5657884fcc2/raw/b8bea1cb54ea41a9e3e725b3310138f0494d55b9/settings.xml -P target/maven/
+script: mvn clean deploy --settings target/maven/settings.xml
 env:
   global:
   - secure: KiPWUASc4i4XZ35BIwEmNmatrN/0w0XbOFq1/+sZmX2X/m8Go2QLjEa1E3t4PN3Emrz6FsYIkxxg+zH/ECNrJjPb6itfAW981+z+vVXVMXI3U5pX/BXE9egZ5Kj/mwx5FOmuEp9hTEX5N5OhDJPURVYrIxmTt8FHIremly0nqhGk/CZg2X/0GoLNK78P1JcsvoaGMblYfWisF/4IBeMtGg0NUXMsGBpUK5/tSmKnj4mKumhx1lOFlJtgm7RmoZ5efqA8MRfi905gYdLCt7QO4I/BzNQ3zze9nF/3E9fI9Spi5AqUABKhWm6SbPmgxwjX1M44Ej73PgG8fqz2Wjdj7qgyYVezc4od8bCYRgHZ940KCcAD4NhIhVUYsTTfQZpiAR21QO1GRde/oTrAMocIbrq6+rTd6WBP5R16q2ciUy8mYIkbkg3N/u7k9ZWgukw5dOJ8Ly15BqJx2SWNJ1cZi0LrLfSUs5m0GKx/GNFdXfN6WizR4byFSahlVVngLq29OnWL7fxYXcr7JqLvlOgISUyD1sEN9TD/zsSc/sNcNShmIzTQoN5UCxfGWhFe/EJeLlZMdi8IHHsJc2nS6Rh6xKHbdeDT0YdZCJc8sGtY43KyGRuV+CzGzgJ/DyU2f4jl4adCZN0aXMeGOFBjRRD2Fuh6ParI9ew7c607bl23gOA=
