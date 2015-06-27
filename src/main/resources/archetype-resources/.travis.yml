@@ -5,5 +5,5 @@ branches:
   only:
     - master
 before_install:
-- wget https://gist.githubusercontent.com/Nunnery/2716c87ed5657884fcc2/raw/b8bea1cb54ea41a9e3e725b3310138f0494d55b9/settings.xml -P target/maven/
+- wget https://gist.githubusercontent.com/Nunnery/2716c87ed5657884fcc2/raw/0065199c4d104bad6099a4b5cd18128b3396a243/settings.xml -P target/maven/
 script: mvn clean deploy --settings target/maven/settings.xml
