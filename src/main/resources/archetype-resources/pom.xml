@@ -23,15 +23,11 @@
             <id>spigot-repo</id>
             <name>Spigot Repository</name>
             <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
-            <layout>default</layout>
         </repository>
         <repository>
             <id>ossrh-snapshots</id>
             <name>OSSRH Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <layout>default</layout>
-            <releases>false</releases>
-            <snapshots>true</snapshots>
         </repository>
     </repositories>
 
