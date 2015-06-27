@@ -12,9 +12,9 @@
     <inceptionYear>2015</inceptionYear>
 
     <scm>
-        <connection>scm:git:https://tealcube_games@bitbucket.org/tealcube_games/bukkit-plugin-archetype.git</connection>
-        <developerConnection>scm:git:https://tealcube_games@bitbucket.org/tealcube_games/bukkit-plugin-archetype.git</developerConnection>
-        <url>https://tealcube_games@bitbucket.org/tealcube_games/bukkit-plugin-archetype</url>
+        <connection>scm:git:https://github.com/TealCube/bukkit-plugin-archetype.git</connection>
+        <developerConnection>scm:git:https://github.com/TealCube/bukkit-plugin-archetype.git</developerConnection>
+        <url>https://github.com/TealCube/bukkit-plugin-archetype.git</url>
         <tag>HEAD</tag>
     </scm>
 
