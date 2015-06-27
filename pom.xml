@@ -10,6 +10,23 @@
     <name>Bukkit Plugin Archetype</name>
     <description>A Bukkit plugin archetype for Teal Cube plugins and libraries.</description>
 
+    <url>http://tealcube.com/</url>
+
+    <developers>
+        <developer>
+            <id>ToppleTheNun</id>
+            <name>Richard Harrah</name>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://gist.githubusercontent.com/anonymous/c8ab7fa2373ec7966c3a/raw/c8b067cf3b763fe79bd5d5e3c2205f3c7ca1a889/license.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <scm>
         <connection>scm:git:https://github.com/TealCube/bukkit-plugin-archetype.git</connection>
         <developerConnection>scm:git:https://github.com/TealCube/bukkit-plugin-archetype.git</developerConnection>
