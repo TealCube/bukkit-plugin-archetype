@@ -19,14 +19,6 @@
         </developer>
     </developers>
 
-    <licenses>
-        <license>
-            <name>MIT License</name>
-            <url>https://gist.githubusercontent.com/anonymous/c8ab7fa2373ec7966c3a/raw/c8b067cf3b763fe79bd5d5e3c2205f3c7ca1a889/license.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
     <scm>
         <connection>scm:git:https://github.com/TealCube/bukkit-plugin-archetype.git</connection>
         <developerConnection>scm:git:git@github.com:TealCube/bukkit-plugin-archetype.git</developerConnection>
@@ -75,12 +67,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>tealcube-snapshots</id>
+            <url>http://maven.tealcube.com/artifactory/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh-releases</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>tealcube-repo</id>
+            <url>http://maven.tealcube.com/artifactory/releases</url>
         </repository>
     </distributionManagement>
 

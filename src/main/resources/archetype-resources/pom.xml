@@ -12,9 +12,9 @@
     <inceptionYear>2015</inceptionYear>
 
     <scm>
-        <connection>scm:git:https://github.com/TealCube/bukkit-plugin-archetype.git</connection>
-        <developerConnection>scm:git:https://github.com/TealCube/bukkit-plugin-archetype.git</developerConnection>
-        <url>https://github.com/TealCube/bukkit-plugin-archetype.git</url>
+        <connection>scm:git:https://github.com/TealCube/${artifactId}.git</connection>
+        <developerConnection>scm:git:https://github.com/TealCube/${artifactId}.git</developerConnection>
+        <url>https://github.com/TealCube/${artifactId}.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -25,9 +25,9 @@
             <url>https://hub.spigotmc.org/nexus/content/groups/public</url>
         </repository>
         <repository>
-            <id>ossrh-snapshots</id>
-            <name>OSSRH Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <id>tealcube-repo</id>
+            <name>Teal Cube Public Repository</name>
+            <url>https://maven.tealcube.com/artifactory/public</url>
         </repository>
     </repositories>
 
@@ -104,12 +104,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>tealcube-snapshots</id>
+            <url>http://maven.tealcube.com/artifactory/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh-releases</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>tealcube-repo</id>
+            <url>http://maven.tealcube.com/artifactory/releases</url>
         </repository>
     </distributionManagement>
 
