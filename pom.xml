@@ -4,7 +4,7 @@
 
     <groupId>com.tealcube.minecraft.bukkit</groupId>
     <artifactId>bukkit-plugin-archetype</artifactId>
-    <version>0.0.8</version>
+    <version>0.0.9-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>Bukkit Plugin Archetype</name>
