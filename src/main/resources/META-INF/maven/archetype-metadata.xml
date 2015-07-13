@@ -9,5 +9,8 @@
                 <include>.travis.yml</include>
             </includes>
         </fileSet>
+        <fileSet>
+            <directory>src/main/resources</directory>
+        </fileSet>
     </fileSets>
 </archetype-descriptor>
