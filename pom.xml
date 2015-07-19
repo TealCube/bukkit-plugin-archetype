@@ -27,13 +27,6 @@
     </scm>
 
     <build>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes><include>git.properties</include></includes>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>external.atlassian.jgitflow</groupId>
@@ -68,7 +61,6 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-archetype-plugin</artifactId>
                     <version>2.3</version>
                 </plugin>
