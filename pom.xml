@@ -1,10 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    The MIT License
+    Copyright (c) 2015 Teal Cube Games
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.tealcube.minecraft.bukkit</groupId>
+    <parent>
+        <groupId>com.tealcube.minecraft.bukkit</groupId>
+        <artifactId>bukkit-plugin-parent</artifactId>
+        <version>0.0.4</version>
+    </parent>
+    
     <artifactId>bukkit-plugin-archetype</artifactId>
-    <version>0.0.10</version>
+    <version>0.0.11</version>
     <packaging>maven-archetype</packaging>
 
     <name>Bukkit Plugin Archetype</name>
@@ -27,36 +56,6 @@
     </scm>
 
     <build>
-        <resources>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes><include>git.properties</include></includes>
-            </resource>
-        </resources>
-        <plugins>
-            <plugin>
-                <groupId>external.atlassian.jgitflow</groupId>
-                <artifactId>jgitflow-maven-plugin</artifactId>
-                <version>1.0-m5.1</version>
-                <configuration>
-                    <username>${github.username}</username>
-                    <password>${github.password}</password>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <allowSnapshots>true</allowSnapshots>
-                    <flowInitContext>
-                        <masterBranchName>master</masterBranchName>
-                        <developBranchName>development</developBranchName>
-                        <featureBranchPrefix>feature-</featureBranchPrefix>
-                        <releaseBranchPrefix>release-</releaseBranchPrefix>
-                        <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
-                        <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
-                    </flowInitContext>
-                    <tagMessage>tagging release ${project.version}</tagMessage>
-                </configuration>
-            </plugin>
-        </plugins>
-
         <extensions>
             <extension>
                 <groupId>org.apache.maven.archetype</groupId>
@@ -68,7 +67,6 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-archetype-plugin</artifactId>
                     <version>2.3</version>
                 </plugin>
@@ -79,51 +77,5 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>tealcube-snapshots</id>
-            <url>http://maven.tealcube.com/artifactory/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>tealcube-repo</id>
-            <url>http://maven.tealcube.com/artifactory/releases</url>
-        </repository>
-    </distributionManagement>
-
-    <profiles>
-        <profile>
-            <id>git</id>
-            <activation>
-                <file>
-                    <exists>${basedir}/.git</exists>
-                </file>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>pl.project13.maven</groupId>
-                        <artifactId>git-commit-id-plugin</artifactId>
-                        <version>2.1.15</version>
-                        <executions>
-                            <execution>
-                                <id>git-commit-id</id>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>revision</goal>
-                                </goals>
-                                <configuration>
-                                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
-                                    <skipPoms>false</skipPoms>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-            <properties>
-            </properties>
-        </profile>
-    </profiles>
 
 </project>
