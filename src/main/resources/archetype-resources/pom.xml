@@ -32,7 +32,7 @@
         <resources>
             <resource>
                 <targetPath>.</targetPath>
-                <directory>${project.basedir}/src/main/resources</directory>
+                <directory>${basedir}/src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
@@ -51,7 +51,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>
                 <configuration>
-                    <executable>${project.basedir}/src/main/resources/setup.sh</executable>
+                    <executable>${basedir}/src/main/resources/setup.sh</executable>
                     <environmentVariables>
                         <environmentVariable>
                             <key>nexus.username</key>
@@ -102,7 +102,7 @@
                                     <goal>revision</goal>
                                 </goals>
                                 <configuration>
-                                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                                    <dotGitDirectory>${basedir}/.git</dotGitDirectory>
                                     <skipPoms>false</skipPoms>
                                 </configuration>
                             </execution>
