@@ -39,6 +39,10 @@
     <name>Bukkit Plugin Archetype</name>
     <description>A Bukkit plugin archetype for Teal Cube plugins and libraries.</description>
 
+    <prerequisites>
+        <maven>3.1.1</maven>
+    </prerequisites>
+
     <inceptionYear>2015</inceptionYear>
     <url>http://tealcube.com/</url>
 
