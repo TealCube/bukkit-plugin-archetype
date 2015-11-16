@@ -33,7 +33,7 @@
     </parent>
     
     <artifactId>bukkit-plugin-archetype</artifactId>
-    <version>0.0.12-SNAPSHOT</version>
+    <version>0.0.13-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
     <name>Bukkit Plugin Archetype</name>
