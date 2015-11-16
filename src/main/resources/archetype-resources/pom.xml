@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.tealcube.minecraft.bukkit</groupId>
         <artifactId>bukkit-plugin-parent</artifactId>
-        <version>0.0.4</version>
+        <version>0.0.9</version>
     </parent>
 
     <artifactId>${artifactId}</artifactId>
@@ -15,6 +15,10 @@
     <name>${artifactId}</name>
 
     <inceptionYear>2015</inceptionYear>
+
+    <prerequisites>
+        <maven>3.1.1</maven>
+    </prerequisites>
 
     <scm>
         <connection>scm:git:https://github.com/TealCube/${artifactId}.git</connection>
@@ -28,7 +32,7 @@
         <resources>
             <resource>
                 <targetPath>.</targetPath>
-                <directory>${project.basedir}/src/main/resources</directory>
+                <directory>${basedir}/src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
@@ -40,6 +44,32 @@
                 <configuration>
                     <source>${project.build.javaVersion}</source>
                     <target>${project.build.javaVersion}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <executable>${basedir}/src/main/resources/setup.sh</executable>
+                    <environmentVariables>
+                        <environmentVariable>
+                            <key>nexus.username</key>
+                            <value>${ossrh.username}</value>
+                        </environmentVariable>
+                        <environmentVariable>
+                            <key>nexus.password</key>
+                            <value>${ossrh.password}</value>
+                        </environmentVariable>
+                        <environmentVariable>
+                            <key>gpg.passphrase</key>
+                            <value>${gpg.passphrase}</value>
+                        </environmentVariable>
+                        <environmentVariable>
+                            <key>slack.key</key>
+                            <value>${slack.key}</value>
+                        </environmentVariable>
+                    </environmentVariables>
                 </configuration>
             </plugin>
         </plugins>
@@ -72,7 +102,7 @@
                                     <goal>revision</goal>
                                 </goals>
                                 <configuration>
-                                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                                    <dotGitDirectory>${basedir}/.git</dotGitDirectory>
                                     <skipPoms>false</skipPoms>
                                 </configuration>
                             </execution>

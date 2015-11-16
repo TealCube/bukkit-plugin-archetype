@@ -29,24 +29,22 @@
     <parent>
         <groupId>com.tealcube.minecraft.bukkit</groupId>
         <artifactId>bukkit-plugin-parent</artifactId>
-        <version>0.0.4</version>
+        <version>0.0.13</version>
     </parent>
     
     <artifactId>bukkit-plugin-archetype</artifactId>
-    <version>0.0.11</version>
+    <version>0.0.12</version>
     <packaging>maven-archetype</packaging>
 
     <name>Bukkit Plugin Archetype</name>
     <description>A Bukkit plugin archetype for Teal Cube plugins and libraries.</description>
 
-    <url>http://tealcube.com/</url>
+    <prerequisites>
+        <maven>3.1.1</maven>
+    </prerequisites>
 
-    <developers>
-        <developer>
-            <id>ToppleTheNun</id>
-            <name>Richard Harrah</name>
-        </developer>
-    </developers>
+    <inceptionYear>2015</inceptionYear>
+    <url>http://tealcube.com/</url>
 
     <scm>
         <connection>scm:git:https://github.com/TealCube/bukkit-plugin-archetype.git</connection>
@@ -54,6 +52,31 @@
         <url>https://github.com/TealCube/bukkit-plugin-archetype.git</url>
         <tag>HEAD</tag>
     </scm>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>
+                https://raw.githubusercontent.com/Nunnery/bukkit-plugin-parent/development/LICENSE
+            </url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>ToppleTheNun</id>
+            <name>Richard Harrah</name>
+            <email>topplethenun@tealcubegames.com</email>
+        </developer>
+    </developers>
+
+    <repositories>
+        <repository>
+            <id>tealcube-repo</id>
+            <url>http://maven.tealcube.com/content/groups/public</url>
+        </repository>
+    </repositories>
 
     <build>
         <extensions>
@@ -77,5 +100,39 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>git</id>
+            <activation>
+                <file>
+                    <exists>${basedir}/.git</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>pl.project13.maven</groupId>
+                        <artifactId>git-commit-id-plugin</artifactId>
+                        <version>2.1.15</version>
+                        <executions>
+                            <execution>
+                                <id>git-commit-id</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>revision</goal>
+                                </goals>
+                                <configuration>
+                                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                                    <skipPoms>false</skipPoms>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <properties />
+        </profile>
+    </profiles>
 
 </project>
